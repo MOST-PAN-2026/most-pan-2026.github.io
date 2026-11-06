@@ -28,6 +28,9 @@
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-");
 
+  const site = (t, inner) =>
+    t.website ? `<a class="site" href="${esc(t.website)}" target="_blank" rel="noopener">${inner}</a>` : inner;
+
   const avatar = (t) =>
     `<div class="avatar" data-initials="${esc(initials(t.speaker))}">
        ${t.photo ? `<img src="${esc(t.photo)}" alt="${esc(t.speaker)}" loading="lazy" onerror="this.remove()">` : ""}
@@ -62,11 +65,11 @@
         .map(
           (t) => `
         <article class="talk" id="talk-${slug(t.speaker)}">
-          ${avatar(t)}
+          ${site(t, avatar(t))}
           <div>
             <p class="talk-time">${t.time ? esc(t.time) : '<span class="tba">time TBA</span>'}</p>
             <p class="talk-title">${t.title ? esc(t.title) : '<span class="tba">Title to be announced</span>'}</p>
-            <p class="talk-who"><strong>${esc(t.speaker)}</strong>, ${esc(t.affiliation)}</p>
+            <p class="talk-who"><strong>${site(t, esc(t.speaker))}</strong>, ${esc(t.affiliation)}</p>
             ${t.abstract ? `<details><summary>abstract</summary><div class="note">${richText(t.abstract)}</div></details>` : ""}
             ${t.bio ? `<details><summary>about the speaker</summary><div class="note">${richText(t.bio)}</div></details>` : ""}
           </div>
@@ -81,7 +84,7 @@
     ev.talks.map(
       (t) => `
       <li class="${COLORS[i % COLORS.length]}">
-        <a href="#talk-${slug(t.speaker)}" data-talk="talk-${slug(t.speaker)}">
+        <a href="${esc(t.website || "#talk-" + slug(t.speaker))}"${t.website ? ' target="_blank" rel="noopener"' : ""}>
           ${avatar(t)}
           <span>
             <span class="sp-name">${esc(t.speaker)}</span>
@@ -91,12 +94,4 @@
       </li>`
     )
   ).join("");
-
-  document.querySelectorAll("[data-talk]").forEach((a) =>
-    a.addEventListener("click", () => {
-      const talk = document.getElementById(a.dataset.talk);
-      talk.classList.add("flash");
-      setTimeout(() => talk.classList.remove("flash"), 1600);
-    })
-  );
 })();

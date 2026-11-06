@@ -48,11 +48,14 @@ h3 { font-size: 1.5rem; color: var(--muted); margin-top: 2px; }
 .day-meta { font-family: var(--mono); font-size: .8rem; color: var(--muted); margin: 8px 0 8px; }
 .talk { display: grid; grid-template-columns: 52px 1fr; gap: 14px; padding: 22px 0; border-bottom: 1px dashed var(--line); scroll-margin-top: 16px; }
 .talk:last-child { border-bottom: 0; }
-.talk.flash { background: #faf7ef; }
 .talk-time { font-family: var(--mono); font-size: .75rem; color: var(--muted); margin: 0 0 2px; }
 .talk-title { font-weight: 600; font-size: 1.05rem; margin: 0 0 2px; }
 .talk-who { margin: 0 0 6px; color: var(--muted); }
 .talk-who strong { color: var(--ink); font-weight: 600; }
+.talk-who a.site { text-decoration: none; border-bottom: 1px solid var(--line); }
+.talk-who a.site:hover { border-color: currentColor; }
+a.site .avatar { transition: opacity .15s; }
+a.site:hover .avatar { opacity: .85; }
 .tba { color: var(--muted); font-style: italic; font-weight: 400; }
 
 details { margin-top: 4px; }
