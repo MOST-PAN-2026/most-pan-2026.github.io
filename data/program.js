@@ -10,7 +10,7 @@
 
 window.SITE = {
   title: "AI without Borders",
-  subtitle: "Mini-conference of the NLP Seminar · Institute of Computer Science, Polish Academy of Sciences · supported by MOST PAN",
+  subtitle: "Mini-conference of the NLP Seminar, Institute of Computer Science, Polish Academy of Sciences, supported by MOST PAN",
   registrationUrl: "", // e.g. "https://forms.gle/XXXXXXXX"
   registrationDeadline: "", // e.g. "20 November 2026"
   onlineUrl: "http://zil.ipipan.waw.pl/seminarium-online",

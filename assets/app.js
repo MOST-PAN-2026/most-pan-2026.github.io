@@ -64,8 +64,9 @@
         <article class="talk" id="talk-${slug(t.speaker)}">
           ${avatar(t)}
           <div>
+            <p class="talk-time">${t.time ? esc(t.time) : '<span class="tba">time TBA</span>'}</p>
             <p class="talk-title">${t.title ? esc(t.title) : '<span class="tba">Title to be announced</span>'}</p>
-            <p class="talk-who"><strong>${esc(t.speaker)}</strong> · ${esc(t.affiliation)} · ${t.time ? esc(t.time) : '<span class="tba">time TBA</span>'}</p>
+            <p class="talk-who"><strong>${esc(t.speaker)}</strong>, ${esc(t.affiliation)}</p>
             ${t.abstract ? `<details><summary>abstract</summary><div class="note">${richText(t.abstract)}</div></details>` : ""}
             ${t.bio ? `<details><summary>about the speaker</summary><div class="note">${richText(t.bio)}</div></details>` : ""}
           </div>

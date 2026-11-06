@@ -1,4 +1,4 @@
-# AI without Borders — NLP Seminar mini-conference, ICS PAS
+# AI without Borders: NLP Seminar mini-conference, ICS PAS
 
 Website for "AI without Borders" (30 November 2026), a MOST PAN–supported mini-conference of the
 [NLP Seminar](https://zil.ipipan.waw.pl/seminar).
