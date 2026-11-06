@@ -49,10 +49,11 @@ h2 { font-size: 2rem; font-weight: 400; letter-spacing: -0.01em; margin: 64px 0 
 
 /* Programme: day tabs */
 .day-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 14px; }
-.day-tabs button { font: inherit; text-align: left; cursor: pointer; background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: 4px; padding: 10px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1 1 260px; }
+.day-tabs button { font: inherit; text-align: left; cursor: pointer; background: #fff; color: var(--ink); border: 1px solid #cfcfcf; border-radius: 4px; padding: 10px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1 1 260px; }
 .day-tabs button .tab-label { font-weight: 600; }
-.day-tabs button[aria-selected="true"].c1 { border-color: var(--c1); box-shadow: inset 0 -3px 0 var(--c1); }
-.day-tabs button[aria-selected="true"].c2 { border-color: var(--c2); box-shadow: inset 0 -3px 0 var(--c2); }
+.day-tabs button[aria-selected="true"] { border-width: 2px; padding: 9px 13px; }
+.day-tabs button[aria-selected="true"].c1 { border-color: var(--c1); }
+.day-tabs button[aria-selected="true"].c2 { border-color: var(--c2); }
 .day-tabs button:focus-visible { outline: 2px solid var(--c3); outline-offset: 2px; }
 .day-tabs .c1 .tag { background: var(--c1); }
 .day-tabs .c2 .tag { background: var(--c2); }
@@ -92,6 +93,7 @@ a.site:hover .avatar { opacity: .85; }
 .foot { margin-top: 72px; padding-top: 14px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: .8rem; color: var(--soft); }
 .foot { display: flex; align-items: center; gap: 20px; }
 .foot p { margin: .3em 0; }
+.foot .made { font-size: .72rem; margin-top: .8em; }
 .pan-logo img { display: block; width: 115px; height: auto; }
 
 @media (max-width: 560px) {
