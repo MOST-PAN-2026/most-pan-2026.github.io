@@ -26,3 +26,6 @@ python3 -m http.server 8000   # then open http://localhost:8000
 ```
 
 Abstracts are taken from https://zil.ipipan.waw.pl/seminar.
+
+After editing `data/program.js`, `assets/app.js` or `assets/style.css`, bump the `?v=`
+number on the matching line in `index.html` so browsers fetch the new version immediately.
