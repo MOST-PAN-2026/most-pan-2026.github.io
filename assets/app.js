@@ -72,8 +72,8 @@
           ${t.time ? `<p class="talk-time">${esc(t.time)}</p>` : ""}
           <h3 class="talk-title">${t.title ? esc(t.title) : '<span class="tba">Title to be announced</span>'}</h3>
           <p class="talk-who"><strong>${nameLink(t)}</strong>, ${esc(t.affiliation)}</p>
+          ${t.bio ? `<p class="talk-bio">${esc(t.bio)}</p>` : ""}
           ${t.abstract ? `<details><summary>abstract</summary><div class="note c1">${richText(t.abstract)}</div></details>` : ""}
-          ${t.bio ? `<details><summary>about the speaker</summary><div class="note c1">${richText(t.bio)}</div></details>` : ""}
         </div>
       </article>`
     )
