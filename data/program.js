@@ -16,7 +16,7 @@
 // ---------------------------------------------------------------------------
 
 window.SITE = {
-  title: "AI without Borders",
+  title: "MOST2026",
   registrationUrl: "", // e.g. "https://forms.gle/XXXXXXXX"
   registrationDeadline: "", // e.g. "20 November 2026"
   onlineUrl: "http://zil.ipipan.waw.pl/seminarium-online",
