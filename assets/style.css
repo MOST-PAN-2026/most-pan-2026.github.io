@@ -43,11 +43,34 @@ h2 { font-size: 2rem; font-weight: 400; letter-spacing: -0.01em; margin: 64px 0 
 .note p { margin: .35em 0; }
 .note.c1, .c1 .note { border-color: var(--c1); }
 .note.c2, .c2 .note { border-color: var(--c2); }
+.c1 details summary { color: var(--c1); }
+.c2 details summary { color: var(--c2); }
 .note.c3 { border-color: var(--c3); }
 
-/* Programme */
-.talk { display: grid; grid-template-columns: 96px 1fr; gap: 20px; padding: 18px 0; }
-.talk-time { font-family: var(--mono); font-size: .8rem; color: var(--c2); font-weight: 600; margin: 0 0 2px; }
+/* Programme: day tabs */
+.day-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 14px; }
+.day-tabs button { font: inherit; text-align: left; cursor: pointer; background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: 4px; padding: 10px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1 1 260px; }
+.day-tabs button .tab-label { font-weight: 600; }
+.day-tabs button[aria-selected="true"].c1 { border-color: var(--c1); box-shadow: inset 0 -3px 0 var(--c1); }
+.day-tabs button[aria-selected="true"].c2 { border-color: var(--c2); box-shadow: inset 0 -3px 0 var(--c2); }
+.day-tabs button:focus-visible { outline: 2px solid var(--c3); outline-offset: 2px; }
+.day-tabs .c1 .tag { background: var(--c1); }
+.day-tabs .c2 .tag { background: var(--c2); }
+.tag { align-self: flex-start; }
+
+.day-title { margin: 22px 0 4px; }
+.session { font-family: var(--head); font-variation-settings: "SOFT" 100, "WONK" 0; font-weight: 500; font-size: 1.4rem; margin: 30px 0 4px; }
+.c1 .session { color: var(--c1); }
+.c2 .session { color: var(--c2); }
+.slot { font-family: var(--mono); font-size: .86rem; margin: 6px 0; }
+.slot-time { font-weight: 600; margin-right: 8px; }
+.slot.break { border-left: 2px solid var(--c3); padding: 6px 0 6px 14px; margin: 26px 0; }
+
+/* Programme: talks */
+.talk { display: grid; grid-template-columns: 96px 1fr; gap: 20px; padding: 14px 0; }
+.talk-time { font-family: var(--mono); font-size: .8rem; font-weight: 600; margin: 0 0 2px; }
+.c1 .talk-time { color: var(--c1); }
+.c2 .talk-time { color: var(--c2); }
 .talk-title { font-family: var(--sans); font-weight: 600; font-size: 1.1rem; line-height: 1.3; margin: 0 0 4px; }
 .talk-who { margin: 0 0 6px; }
 .talk-who strong { font-weight: 600; }

@@ -63,19 +63,64 @@
     : "";
 
   // --- Programme ------------------------------------------------------------
-  document.getElementById("talks").innerHTML = EVENTS.flatMap((ev) =>
-    ev.talks.map(
-      (t) => `
-      <article class="talk" id="talk-${slug(t.speaker)}">
-        ${photoLink(t)}
-        <div>
-          ${t.time ? `<p class="talk-time">${esc(t.time)}</p>` : ""}
-          <h3 class="talk-title">${t.title ? esc(t.title) : '<span class="tba">Title to be announced</span>'}</h3>
-          <p class="talk-who"><strong>${nameLink(t)}</strong>, ${esc(t.affiliation)}</p>
-          ${t.bio ? `<p class="talk-bio">${esc(t.bio)}</p>` : ""}
-          ${t.abstract ? `<details><summary>abstract</summary><div class="note c1">${richText(t.abstract)}</div></details>` : ""}
-        </div>
-      </article>`
-    )
+  const COLORS = ["c1", "c2"];
+  const shortDate = (ev) => ev.dateLabel.replace(/^\w+, /, "").replace(/ (\w{3})\w* \d{4}$/, " $1");
+
+  const talkHtml = (t) => `
+    <article class="talk" id="talk-${slug(t.speaker)}">
+      ${photoLink(t)}
+      <div>
+        ${t.time ? `<p class="talk-time">${esc(t.time)}</p>` : ""}
+        <h4 class="talk-title">${t.title ? esc(t.title) : '<span class="tba">Title to be announced</span>'}</h4>
+        <p class="talk-who"><strong>${nameLink(t)}</strong>${t.affiliation ? `, ${esc(t.affiliation)}` : ""}</p>
+        ${t.bio ? `<p class="talk-bio">${esc(t.bio)}</p>` : ""}
+        ${t.abstract ? `<details><summary>abstract</summary><div class="note">${richText(t.abstract)}</div></details>` : ""}
+      </div>
+    </article>`;
+
+  const itemHtml = (x) => {
+    if (x.heading) return `<h3 class="session">${esc(x.heading)}</h3>`;
+    if (x.speaker) return talkHtml(x);
+    return `<p class="slot${x.kind === "break" ? " break" : ""}"><span class="slot-time">${esc(x.time)}</span> ${esc(x.text)}</p>`;
+  };
+
+  document.getElementById("day-tabs").innerHTML = EVENTS.map(
+    (ev, i) => `
+    <button type="button" role="tab" id="tab-${ev.id}" aria-controls="panel-${ev.id}" class="${COLORS[i % COLORS.length]}">
+      <span class="tag">${esc(shortDate(ev))}</span>
+      <span class="tab-label">Day ${i + 1}: ${esc(ev.title)}</span>
+    </button>`
   ).join("");
+
+  document.getElementById("talks").innerHTML = EVENTS.map(
+    (ev, i) => `
+    <div class="day ${COLORS[i % COLORS.length]}" role="tabpanel" id="panel-${ev.id}" aria-labelledby="tab-${ev.id}">
+      <p class="day-title">${esc(ev.dateLabel)}: <strong>${esc(ev.title)}</strong>${ev.subtitle ? `. ${esc(ev.subtitle)}` : ""}</p>
+      ${ev.schedule.map(itemHtml).join("")}
+    </div>`
+  ).join("");
+
+  const tabs = [...document.querySelectorAll("#day-tabs [role=tab]")];
+  const select = (id, focus) => {
+    tabs.forEach((b) => {
+      const on = b.id === "tab-" + id;
+      b.setAttribute("aria-selected", on);
+      b.tabIndex = on ? 0 : -1;
+      document.getElementById(b.getAttribute("aria-controls")).hidden = !on;
+      if (on && focus) b.focus();
+    });
+  };
+  tabs.forEach((b, i) => {
+    b.addEventListener("click", () => select(EVENTS[i].id));
+    b.addEventListener("keydown", (e) => {
+      const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (d) select(EVENTS[(i + d + EVENTS.length) % EVENTS.length].id, true);
+    });
+  });
+
+  // Open the day from the URL (#day1 / #day2), else the next upcoming day.
+  const today = new Date().toISOString().slice(0, 10);
+  const fromHash = EVENTS.find((ev) => location.hash === "#" + ev.id);
+  const upcoming = EVENTS.find((ev) => ev.date >= today) || EVENTS[EVENTS.length - 1];
+  select((fromHash || upcoming).id);
 })();
