@@ -9,8 +9,8 @@
 // ---------------------------------------------------------------------------
 
 window.SITE = {
-  title: "MOST PAN Mini-conferences 2026",
-  subtitle: "Natural Language Processing Seminar · Institute of Computer Science, Polish Academy of Sciences",
+  title: "AI without Borders",
+  subtitle: "Mini-conference of the NLP Seminar · Institute of Computer Science, Polish Academy of Sciences · supported by MOST PAN",
   registrationUrl: "", // e.g. "https://forms.gle/XXXXXXXX"
   registrationDeadline: "", // e.g. "20 November 2026"
   onlineUrl: "http://zil.ipipan.waw.pl/seminarium-online",
@@ -21,78 +21,6 @@ window.SITE = {
 };
 
 window.EVENTS = [
-  {
-    id: "persuasion",
-    date: "2026-11-23",
-    dateLabel: "Monday, 23 November 2026",
-    title: "Persuasion in Parliament and Beyond",
-    subtitle: "Computational Analysis of Political Discourse",
-    talks: [
-      {
-        time: "",
-        speaker: "Tomaž Erjavec",
-        affiliation: "Jožef Stefan Institute",
-        photo: "photos/erjavec.jpg",
-        bio: "",
-        title: "ParlaMint – Comparable and Interoperable Parliamentary Corpora",
-        abstract: "The talk presents the ParlaMint corpora of parliamentary debates (https://www.clarin.eu/parlamint) of 29 European countries and autonomous regions, covering at least the period from 2015 to 2022, and containing over 1 billion words. The corpora are uniformly encoded, contain rich metadata about their 24 thousand speakers, and are linguistically annotated, as well as machine translated to English. We present the compilation of the corpora, including the encoding infrastructure, use of GitHub, the production of individual corpora, the common pipeline for producing their distribution, and use of CLARIN services for dissemination. We also present associated efforts, such corpora of additional countries, and the ParlaSpeech (https://clarinsi.github.io/parlaspeech/) corpora. Finally, the use of the corpora and further work are discussed.",
-      },
-      {
-        time: "",
-        speaker: "Maciej Ogrodniczuk",
-        affiliation: "Institute of Computer Science, Polish Academy of Sciences",
-        photo: "photos/ogrodniczuk.jpg",
-        bio: "",
-        title: "Beyond the Polish Parliamentary Corpus",
-        abstract: "The Polish Parliamentary Corpus (https://clip.ipipan.waw.pl/PPC), which is also represented in ParlaMint, served as a model for a series of Polish corpora containing similar types of material, which are ideally suited to research into persuasion techniques. The presentation will introduce these datasets: the Round Table Corpus (https://clip.ipipan.waw.pl/PRTC), documenting the opposition’s negotiations with the communist authorities of the Polish People’s Republic in 1989, and the Polish Local Government Debates Corpus (https://zil.ipipan.waw.pl/LocalGovPL) – a collection of transcripts from the proceedings of provincial assemblies, city councils, county councils and local councils from 2018 to 2026.",
-      },
-      {
-        time: "",
-        speaker: "Jakub Piskorski",
-        affiliation: "Joint Research Centre of the European Commission",
-        photo: "photos/piskorski.jpg",
-        bio: "",
-        title: "Multilingual Corpora of Persuasion Techniques in News and Parliamentary Debates",
-        abstract: "This talk provides an overview of recently developed multilingual corpora with text span-level annotation of persuasion techniques in online news, parliamentary debates, and other types of texts. The talk will elaborate on the corpora characteristics, taxonomies, creation process, and annotation complexity aspects. The talk will also reflect on the experience gained from shared tasks revolving around detection and classification of persuasion techniques which exploit these corpora, and covers state-of-the-art performance and cross-corpora comparison.",
-      },
-      {
-        time: "",
-        speaker: "Arkadiusz Modzelewski",
-        affiliation: "University of Padua / NASK",
-        photo: "photos/modzelewski.jpg",
-        bio: "",
-        title: "Leveraging Persuasion and Intent for Analysis and Reasoning-based Detection of Disinformation with Large Language Models",
-        abstract: "This talk introduces novel human-annotated disinformation datasets that enable the analysis of manipulation techniques and malicious intent in Polish and English. It presents reasoning approaches that explicitly incorporate persuasion and intent to improve LLM-based disinformation detection across domains, genres, and languages. Finally, it introduces a multilingual benchmark of human- and AI-generated persuasive content, showing that AI-generated persuasive text exhibits linguistic differences and poses new challenges for detection. Overall, the talk presents new datasets, reasoning frameworks, and empirical insights toward more transparent and generalizable disinformation detection in the era of generative AI.",
-      },
-      {
-        time: "",
-        speaker: "Philipp Mayr-Schlegel",
-        affiliation: "GESIS – Leibniz Institute for the Social Sciences",
-        photo: "photos/mayr-schlegel.jpg",
-        bio: "",
-        title: "",
-        abstract: "",
-      },
-      {
-        time: "",
-        speaker: "Kamil Orzechowski",
-        affiliation: "Warsaw University of Technology",
-        photo: "photos/orzechowski.jpg",
-        bio: "",
-        title: "ParlSent-EU: Three Decades of Interpersonal Sentiment in European Parliamentary Debates Since the 1990s",
-        abstract: "Parliamentary corpora offer rich speech texts and speaker metadata but rarely capture interpersonal sentiment between legislators. Research on legislative relationships relies mainly on roll-call votes and co-sponsorship, reflecting behavioural alignment rather than expressed attitudes such as approval, criticism, or hostility. We introduce ParlSent-EU, a cross-national dataset of directed interpersonal sentiment relations from plenary speeches in the Polish Sejm, German Bundestag, and French Assemblée nationale, spanning over three decades from the 1990s. It was developed by Warsaw University of Technology (OMINO project) and GESIS – Leibniz Institute for the Social Sciences (POLLUX project). Each relation records a speaker, a targeted legislator, and the expressed sentiment (positive, neutral, or negative), with temporal, parliamentary, and demographic metadata, enabling the reconstruction of directed, signed, and temporal networks. Relations are identified by a pipeline combining lexical filtering, LLM-based sentiment extraction, and rule-based entity disambiguation, validated against manually annotated gold standards with performance metrics and inter-annotator agreement. ParlSent-EU enables comparative, longitudinal studies of elite affective polarization, cross-party hostility, intra-party cohesion, and gendered political communication in European parliamentary democracies.",
-      },
-      {
-        time: "",
-        speaker: "Tiziano Labruna",
-        affiliation: "Fondazione Bruno Kessler",
-        photo: "photos/labruna.jpg",
-        bio: "",
-        title: "From Detecting Persuasion to Predicting Its Success: Persuasion Strategies as Predictive Signals",
-        abstract: "Computational work on persuasion has largely focused on detecting rhetorical techniques in text. This talk would ask a complementary question: do those techniques tell us anything about whether an argument actually changes someone's mind? Multi-Strategy Persuasion Scoring (https://aclanthology.org/2026.findings-eacl.97/) is a zero-shot framework in which a large language model reasons about each of six persuasion strategies independently and produces a per-strategy score, which can then be aggregated directly or used as input to a lightweight classifier. The strategy has been tested across three datasets, proving that strategy-guided reasoning consistently outperforms both direct pairwise comparison and generic chain-of-thought baselines.",
-      },
-    ],
-  },
   {
     id: "borders",
     date: "2026-11-30",

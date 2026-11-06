@@ -1,7 +1,7 @@
 (function () {
   const S = window.SITE;
   const EVENTS = window.EVENTS;
-  const COLORS = ["c1", "c2"];
+  const COLORS = ["c2", "c1"];
 
   const esc = (s) =>
     String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -23,7 +23,7 @@
   const slug = (name) =>
     name
       .normalize("NFD")
-      .replace(/[̀-ͯ]/g, "")
+      .replace(/[\u0300-\u036f]/g, "")
       .replace(/ł/g, "l")
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-");
@@ -32,8 +32,6 @@
     `<div class="avatar" data-initials="${esc(initials(t.speaker))}">
        ${t.photo ? `<img src="${esc(t.photo)}" alt="${esc(t.speaker)}" loading="lazy" onerror="this.remove()">` : ""}
      </div>`;
-
-  const shortDate = (ev) => ev.dateLabel.replace(/^\w+, /, "").replace(/ (\w{3})\w* \d{4}$/, " $1");
 
   // --- Site-wide fields -----------------------------------------------------
   document.querySelectorAll("[data-site]").forEach((el) => {
@@ -58,9 +56,8 @@
   document.getElementById("programme").innerHTML = EVENTS.map(
     (ev, i) => `
     <section class="day ${COLORS[i % COLORS.length]}" id="day-${ev.id}">
-      <h2>${esc(ev.title)}</h2>
+      <h2>${EVENTS.length > 1 ? esc(ev.title) : "Programme"}</h2>
       ${ev.subtitle ? `<h3>${esc(ev.subtitle)}</h3>` : ""}
-      <p class="day-meta"><span class="tag">${esc(shortDate(ev))}</span> ${esc(ev.dateLabel)} · English · ${ev.talks.length} talks</p>
       ${ev.talks
         .map(
           (t) => `
@@ -86,7 +83,7 @@
         <a href="#talk-${slug(t.speaker)}" data-talk="talk-${slug(t.speaker)}">
           ${avatar(t)}
           <span>
-            <span class="sp-name">${esc(t.speaker)} <span class="tag">${esc(shortDate(ev))}</span></span>
+            <span class="sp-name">${esc(t.speaker)}</span>
             <span class="sp-aff">${esc(t.affiliation)}</span>
           </span>
         </a>

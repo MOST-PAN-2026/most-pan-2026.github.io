@@ -25,6 +25,7 @@ h3 { font-size: 1.5rem; color: var(--muted); margin-top: 2px; }
 
 .kicker, .draft, .nav, .foot { font-family: var(--mono); font-size: .8rem; color: var(--muted); }
 .kicker { margin: 0 0 6px; }
+.when { font-family: var(--mono); font-size: .85rem; color: var(--muted); margin: 10px 0 0; }
 .intro { margin: 14px 0 18px; }
 .nav { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 10px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .nav a { text-decoration: none; }

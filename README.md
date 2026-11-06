@@ -1,7 +1,7 @@
-# MOST PAN Mini-conferences 2026 — NLP Seminar, ICS PAS
+# AI without Borders — NLP Seminar mini-conference, ICS PAS
 
-Website for the two MOST PAN–supported mini-conferences of the
-[NLP Seminar](https://zil.ipipan.waw.pl/seminar) (23 & 30 November 2026).
+Website for "AI without Borders" (30 November 2026), a MOST PAN–supported mini-conference of the
+[NLP Seminar](https://zil.ipipan.waw.pl/seminar).
 
 Plain static site (HTML/CSS/JS, no build step), hosted on GitHub Pages.
 
