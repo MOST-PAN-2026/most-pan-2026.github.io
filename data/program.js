@@ -6,7 +6,7 @@
 //    missing, the site shows the speaker's initials instead.
 //  - website: speaker's homepage; photo and name link to it.
 //  - bio: 2–4 sentences. Leave "" to hide the bio toggle.
-//  - time: e.g. "10:15". Leave "" to show "Time TBA".
+//  - time: e.g. "10:15" (Warsaw time). Leave "" to show no time.
 // ---------------------------------------------------------------------------
 
 window.SITE = {
@@ -16,9 +16,8 @@ window.SITE = {
   registrationDeadline: "", // e.g. "20 November 2026"
   onlineUrl: "http://zil.ipipan.waw.pl/seminarium-online",
   seminarUrl: "https://zil.ipipan.waw.pl/seminar",
-  youtubeUrl: "https://www.youtube.com/ipipan",
   contactEmail: "", // e.g. "seminar@ipipan.waw.pl"
-  venue: "Online (MS Teams) — venue details TBA",
+  venue: "Hybrid: Warsaw (room TBA) and MS Teams",
 };
 
 window.EVENTS = [

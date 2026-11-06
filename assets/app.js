@@ -1,7 +1,7 @@
 (function () {
   const S = window.SITE;
   const EVENTS = window.EVENTS;
-  const COLORS = ["c2", "c1"];
+  const NEW_TAB = '<span class="vh"> (opens in new tab)</span>';
 
   const esc = (s) =>
     String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -10,7 +10,7 @@
   const richText = (s) =>
     s
       .split(/\n\s*\n/)
-      .map((p) => "<p>" + esc(p).replace(/(https?:\/\/[^\s)]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>') + "</p>")
+      .map((p) => "<p>" + esc(p).replace(/(https?:\/\/[^\s)]+)/g, '<a href="$1" target="_blank" rel="noopener">$1' + NEW_TAB + '</a>') + "</p>")
       .join("");
 
   const initials = (name) =>
@@ -28,12 +28,19 @@
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-");
 
-  const site = (t, inner) =>
-    t.website ? `<a class="site" href="${esc(t.website)}" target="_blank" rel="noopener">${inner}</a>` : inner;
+  const nameLink = (t) =>
+    t.website
+      ? `<a class="site" href="${esc(t.website)}" target="_blank" rel="noopener">${esc(t.speaker)}${NEW_TAB}</a>`
+      : esc(t.speaker);
+
+  const photoLink = (t) =>
+    t.website
+      ? `<a class="site" href="${esc(t.website)}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">${avatar(t)}</a>`
+      : avatar(t);
 
   const avatar = (t) =>
     `<div class="avatar" data-initials="${esc(initials(t.speaker))}">
-       ${t.photo ? `<img src="${esc(t.photo)}" alt="${esc(t.speaker)}" loading="lazy" onerror="this.remove()">` : ""}
+       ${t.photo ? `<img src="${esc(t.photo)}" alt="" loading="lazy" onerror="this.remove()">` : ""}
      </div>`;
 
   // --- Site-wide fields -----------------------------------------------------
@@ -48,7 +55,7 @@
   document.querySelectorAll("[data-href]").forEach((el) => (el.href = S[el.dataset.href]));
 
   document.getElementById("register-line").innerHTML = S.registrationUrl
-    ? `→ <a href="${esc(S.registrationUrl)}" target="_blank" rel="noopener">Registration form</a>`
+    ? `→ <a href="${esc(S.registrationUrl)}" target="_blank" rel="noopener">Registration form${NEW_TAB}</a>`
     : "→ The registration form will be linked here soon.";
 
   document.getElementById("contact-line").innerHTML = S.contactEmail
@@ -56,42 +63,19 @@
     : "";
 
   // --- Programme ------------------------------------------------------------
-  document.getElementById("programme").innerHTML = EVENTS.map(
-    (ev, i) => `
-    <section class="day ${COLORS[i % COLORS.length]}" id="day-${ev.id}">
-      <h2>${EVENTS.length > 1 ? esc(ev.title) : "Programme"}</h2>
-      ${ev.subtitle ? `<h3>${esc(ev.subtitle)}</h3>` : ""}
-      ${ev.talks
-        .map(
-          (t) => `
-        <article class="talk" id="talk-${slug(t.speaker)}">
-          ${site(t, avatar(t))}
-          <div>
-            <p class="talk-time">${t.time ? esc(t.time) : '<span class="tba">time TBA</span>'}</p>
-            <p class="talk-title">${t.title ? esc(t.title) : '<span class="tba">Title to be announced</span>'}</p>
-            <p class="talk-who"><strong>${site(t, esc(t.speaker))}</strong>, ${esc(t.affiliation)}</p>
-            ${t.abstract ? `<details><summary>abstract</summary><div class="note">${richText(t.abstract)}</div></details>` : ""}
-            ${t.bio ? `<details><summary>about the speaker</summary><div class="note">${richText(t.bio)}</div></details>` : ""}
-          </div>
-        </article>`
-        )
-        .join("")}
-    </section>`
-  ).join("");
-
-  // --- Speakers -------------------------------------------------------------
-  document.getElementById("speaker-list").innerHTML = EVENTS.flatMap((ev, i) =>
+  document.getElementById("talks").innerHTML = EVENTS.flatMap((ev) =>
     ev.talks.map(
       (t) => `
-      <li class="${COLORS[i % COLORS.length]}">
-        <a href="${esc(t.website || "#talk-" + slug(t.speaker))}"${t.website ? ' target="_blank" rel="noopener"' : ""}>
-          ${avatar(t)}
-          <span>
-            <span class="sp-name">${esc(t.speaker)}</span>
-            <span class="sp-aff">${esc(t.affiliation)}</span>
-          </span>
-        </a>
-      </li>`
+      <article class="talk" id="talk-${slug(t.speaker)}">
+        ${photoLink(t)}
+        <div>
+          ${t.time ? `<p class="talk-time">${esc(t.time)}</p>` : ""}
+          <h3 class="talk-title">${t.title ? esc(t.title) : '<span class="tba">Title to be announced</span>'}</h3>
+          <p class="talk-who"><strong>${nameLink(t)}</strong>, ${esc(t.affiliation)}</p>
+          ${t.abstract ? `<details><summary>abstract</summary><div class="note c1">${richText(t.abstract)}</div></details>` : ""}
+          ${t.bio ? `<details><summary>about the speaker</summary><div class="note c1">${richText(t.bio)}</div></details>` : ""}
+        </div>
+      </article>`
     )
   ).join("");
 })();

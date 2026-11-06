@@ -1,5 +1,5 @@
 Speaker photos, named as in `data/program.js` (e.g. `savary.jpg`).
-Square JPG, 400×400 px. A missing photo falls back to the speaker's initials.
+Square JPG, 240×240 px. A missing photo falls back to the speaker's initials.
 
 Initial photos were taken from the speakers' own websites, or from an official
 page when their site has no photo. Replace them if speakers send their own:
