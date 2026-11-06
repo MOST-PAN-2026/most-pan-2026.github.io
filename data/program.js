@@ -5,7 +5,8 @@
 //  - registrationUrl: paste the Google/Microsoft Form link here.
 //  - Each day has a "schedule": a list of
 //      { heading: "Session 1" }                         section heading
-//      { time: "10:45–11:15", text: "...", kind: "break" }  non-talk slot
+//      { time: "10:45–11:15", text: "...", kind: "break", icon: "coffee" }  non-talk slot
+//                                         (icon: "coffee" or "lunch", optional)
 //      { time, speaker, affiliation, photo, website, title, bio, abstract }  talk
 //  - photo: put an image in /photos (e.g. photos/erjavec.jpg). If the file is
 //    missing, the site shows the speaker's initials instead.
@@ -55,7 +56,7 @@ window.EVENTS = [
         bio: "Maciej Ogrodniczuk is an Associate Professor and Head of the Department of Language Modelling at the Institute of Computer Science, Polish Academy of Sciences, in Warsaw. He received his PhD in linguistics in 2006. His research focuses on the semantic description of Polish, in particular automated analysis of reference relations and discourse. He leads his group's work in CLARIN-PL and the PressMint project on corpora of European historical newspapers.",
         abstract: "The Polish Parliamentary Corpus (https://clip.ipipan.waw.pl/PPC), which is also represented in ParlaMint, served as a model for a series of Polish corpora containing similar types of material, which are ideally suited to research into persuasion techniques. The presentation will introduce these datasets: the Round Table Corpus (https://clip.ipipan.waw.pl/PRTC), documenting the opposition’s negotiations with the communist authorities of the Polish People’s Republic in 1989, and the Polish Local Government Debates Corpus (https://zil.ipipan.waw.pl/LocalGovPL) – a collection of transcripts from the proceedings of provincial assemblies, city councils, county councils and local councils from 2018 to 2026.",
       },
-      { time: "10:45–11:15", text: "Networking coffee break", kind: "break" },
+      { time: "10:45–11:15", text: "Networking coffee break", kind: "break", icon: "coffee" },
       { heading: "Session 2" },
       {
         time: "11:15–12:00",
@@ -77,7 +78,7 @@ window.EVENTS = [
         bio: "Arkadiusz Modzelewski is a PhD candidate under a joint (cotutelle) agreement between the University of Padua and the Polish-Japanese Academy of Information Technology, and a Senior NLP Specialist at NASK National Research Institute in Warsaw. His research uses large language models to detect disinformation, manipulation and persuasion techniques in text. He co-organised the SlavicNLP 2025 shared task on persuasion techniques in parliamentary debates and social media.",
         abstract: "This talk introduces novel human-annotated disinformation datasets that enable the analysis of manipulation techniques and malicious intent in Polish and English. It presents reasoning approaches that explicitly incorporate persuasion and intent to improve LLM-based disinformation detection across domains, genres, and languages. Finally, it introduces a multilingual benchmark of human- and AI-generated persuasive content, showing that AI-generated persuasive text exhibits linguistic differences and poses new challenges for detection. Overall, the talk presents new datasets, reasoning frameworks, and empirical insights toward more transparent and generalizable disinformation detection in the era of generative AI.",
       },
-      { time: "12:45–13:30", text: "Networking lunch in the conference area", kind: "break" },
+      { time: "12:45–13:30", text: "Networking lunch in the conference area", kind: "break", icon: "lunch" },
       { heading: "Session 3" },
       {
         time: "13:30–14:15",
@@ -99,7 +100,7 @@ window.EVENTS = [
         bio: "Kamil P. Orzechowski is a researcher at the Faculty of Physics, Warsaw University of Technology, where he pursued doctoral research in the university's Doctoral School. His work develops collective artificial intelligence methods and applies them to the statistical physics of complex networks. He is first author of a 2025 Scientific Reports paper showing that machine learning ensembles, like human crowds, can under some conditions lose accuracy as they grow.",
         abstract: "Parliamentary corpora offer rich speech texts and speaker metadata but rarely capture interpersonal sentiment between legislators. Research on legislative relationships relies mainly on roll-call votes and co-sponsorship, reflecting behavioural alignment rather than expressed attitudes such as approval, criticism, or hostility. We introduce ParlSent-EU, a cross-national dataset of directed interpersonal sentiment relations from plenary speeches in the Polish Sejm, German Bundestag, and French Assemblée nationale, spanning over three decades from the 1990s. It was developed by Warsaw University of Technology (OMINO project) and GESIS – Leibniz Institute for the Social Sciences (POLLUX project). Each relation records a speaker, a targeted legislator, and the expressed sentiment (positive, neutral, or negative), with temporal, parliamentary, and demographic metadata, enabling the reconstruction of directed, signed, and temporal networks. Relations are identified by a pipeline combining lexical filtering, LLM-based sentiment extraction, and rule-based entity disambiguation, validated against manually annotated gold standards with performance metrics and inter-annotator agreement. ParlSent-EU enables comparative, longitudinal studies of elite affective polarization, cross-party hostility, intra-party cohesion, and gendered political communication in European parliamentary democracies.",
       },
-      { time: "15:00–15:30", text: "Networking coffee break", kind: "break" },
+      { time: "15:00–15:30", text: "Networking coffee break", kind: "break", icon: "coffee" },
       { heading: "Session 4" },
       {
         time: "15:30–16:15",
@@ -154,7 +155,7 @@ window.EVENTS = [
         bio: "Marzena Karpińska is an assistant professor at Simon Fraser University in Vancouver, Canada. Her research covers the detection of AI-generated and AI-translated text, multilingual NLP, machine translation of creative texts, and long-form text processing. Before joining SFU in 2026, she was a senior researcher at Microsoft and a postdoctoral researcher at the University of Massachusetts Amherst. She holds a PhD from the University of Tokyo.",
         abstract: "Modern detectors identify only who wrote the words. However, AI-assisted writing is becoming more common. For instance, a user may use AI tools to polish their writing or produce the text from their supplied content. Hence, it is becoming important to detect who contributed the ideas not only the prose. In this talk, I will first discuss the specificities of AI writing at the prose and content levels. Then I will talk about training Idealens, an AI detector that works based on document content, rather than its prose.",
       },
-      { time: "10:45–11:15", text: "Networking coffee break", kind: "break" },
+      { time: "10:45–11:15", text: "Networking coffee break", kind: "break", icon: "coffee" },
       { heading: "Session 2" },
       {
         time: "11:15–12:00",
@@ -176,7 +177,7 @@ window.EVENTS = [
         bio: "Mateusz Lango is a postdoctoral researcher at the Institute of Formal and Applied Linguistics, Faculty of Mathematics and Physics, Charles University in Prague, where he works on the ERC-funded Next-Generation Natural Language Generation (NG-NLG) project. His research interests include explainable AI and machine learning, accurate and controllable natural language generation, and explainable sentiment analysis. He received the Best Non-publicized Paper Award at EACL 2024.",
         abstract: "The fluency of modern large language models may lead to a perception that natural language generation is close to solved, yet a closer look reveals a recurring pattern of failure whenever a task requires exact, discrete fidelity to some underlying structure rather than fluent pattern completion. Reasoning that is straightforward in a single turn becomes surprisingly brittle across a dialogue; generation under explicit lexical or content constraints remains difficult to guarantee; and explanations produced by LLM-as-judge systems are frequently unfaithful to the actual decision process they claim to justify. I will argue that these three failures share a common shape: each is a case where an LLM must maintain or produce something exact and discrete, but is instead relying on an implicit, continuous representation not well suited to that job. This talk focuses on the third case - faithful explanation - and asks what happens when we make the intermediate representation explicit and symbolic, rather than leaving it to the model to reconstruct implicitly. I will present two lines of work built on this idea. The first constructs faithful explanations for image classifiers via a pipeline that separates the extraction of the (symbolic, verifiable) evidence behind a decision from its realization into fluent natural language, so that plausibility and faithfulness can be optimized somewhat independently. The second uses LLMs not to generate text directly, but to author interpretable, rule-based generation systems from scratch, producing data-to-text generators that are faithful and inspectable by construction rather than by post-hoc checking. Together, these case studies suggest a general recipe for faithful explanation: let neural models handle fluency and search, and let symbolic structure carry the guarantees.",
       },
-      { time: "12:45–13:30", text: "Networking lunch in the conference area", kind: "break" },
+      { time: "12:45–13:30", text: "Networking lunch in the conference area", kind: "break", icon: "lunch" },
       { heading: "Session 3" },
       {
         time: "13:30–14:15",
@@ -198,7 +199,7 @@ window.EVENTS = [
         bio: "Michał Ptaszyński is Professor at the Faculty of Engineering, Kitami Institute of Technology, Japan, where he has worked since 2012. He received his PhD in Information Science from Hokkaido University. His research covers affect and sentiment analysis, automatic cyberbullying detection, and language technology for low-resource languages such as Ainu. His projects include ML-Ask, an affect analysis tool for Japanese, and YACIS, a large corpus of Japanese blogs.",
         abstract: "How similar must two languages be for an AI model trained on one to work on the other, and can we know before training? Multilingual AI models are usually trained on a few high-resource languages and then applied to many others. This lecture presents qWALS, an open-source metric of structural distance between more than 2,600 languages, built on nearly 200 features from the World Atlas of Language Structures (WALS), including word order, morphology, phonology, negation and grammatical gender. Unlike vector-based measures, every qWALS feature can be inspected and re-weighted for a given task.\n\nI show that cross-lingual transfer works better the more similar the source and target languages are. Once the features relevant to a task are selected, qWALS predicts transfer performance in syntactic parsing almost perfectly (up to r = −0.99). For Polish, a model trained on other Slavic languages clearly outperforms one trained on English. To additionally validate qWALS, three professional linguists judged 769 language-pair similarity questions, and their answers agreed with qWALS at least as closely as with each other.\n\nFinally, I discuss what this means for multilingual models and LLMs, namely, choosing source languages for transfer, estimating performance before training, and deciding which languages to include in training data. This matters most for low-resource and endangered languages, where data is scarce and the choice of source language matters most.",
       },
-      { time: "15:00–15:30", text: "Networking coffee break", kind: "break" },
+      { time: "15:00–15:30", text: "Networking coffee break", kind: "break", icon: "coffee" },
       { heading: "Session 4" },
       {
         time: "15:30–16:15",

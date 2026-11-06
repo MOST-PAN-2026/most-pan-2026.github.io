@@ -78,10 +78,18 @@
       </div>
     </article>`;
 
+  // Small line icons for breaks, drawn in the current text colour.
+  const ICONS = {
+    coffee: '<path d="M4 10h12v4a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 11.5h1.5a2.5 2.5 0 0 1 0 5H15.5"/><path d="M8 3.5c-.6 1 .6 2 0 3.5M12 3.5c-.6 1 .6 2 0 3.5"/>',
+    lunch: '<path d="M7 3v7M5 3v5a2 2 0 0 0 4 0V3M7 10v11"/><path d="M17 21V3c-2 1.2-3 4-3 7.5h3"/>',
+  };
+  const icon = (name) =>
+    ICONS[name] ? `<svg class="slot-icon" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name]}</svg>` : "";
+
   const itemHtml = (x) => {
     if (x.heading) return `<h3 class="session">${esc(x.heading)}</h3>`;
     if (x.speaker) return talkHtml(x);
-    return `<p class="slot${x.kind === "break" ? " break" : ""}"><span class="slot-time">${esc(x.time)}</span> ${esc(x.text)}</p>`;
+    return `<p class="slot${x.kind === "break" ? " break" : ""}"><span class="slot-time">${esc(x.time)}</span> ${icon(x.icon)}${esc(x.text)}</p>`;
   };
 
   document.getElementById("day-tabs").innerHTML = EVENTS.map(
