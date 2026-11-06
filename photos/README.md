@@ -6,6 +6,12 @@ page when their site has no photo. Replace them if speakers send their own:
 
 | File | Source |
 | --- | --- |
+| erjavec.jpg | https://isjfr.zrc-sazu.si/en/sodelavci/tomaz-erjavec-en (own site has no headshot) |
+| ogrodniczuk.jpg | https://language.ipipan.waw.pl/faculty/maciej-ogrodniczuk |
+| modzelewski.jpg | https://amodzelewski.com/ |
+| mayr-schlegel.jpg | https://philippmayr.github.io/ |
+| orzechowski.jpg | https://www.fizyka.pw.edu.pl/Rekrutacja/Poznaj-absolwentow/Kamil-Orzechowski |
+| da-san-martino.jpg | https://www.math.unipd.it/~dasan/ |
 | karpinska.jpg | https://marzenakrp.github.io/ |
 | szymanik.jpg | https://jakubszymanik.com/ |
 | jatowt.jpg | https://www.nask.pl/en/bio/prof-adam-jatowt (personal site has no photo) |
@@ -14,4 +20,4 @@ page when their site has no photo. Replace them if speakers send their own:
 | falenska.jpg | https://www.ims.uni-stuttgart.de/institut/team/Falenska/ (no personal site found) |
 | stanczak.jpg | https://karstanczak.github.io/ |
 
-Missing, ask the speaker: lango.jpg (Mateusz Lango).
+Missing, ask the speaker: lango.jpg (Mateusz Lango), piskorski.jpg (Jakub Piskorski), labruna.jpg (Tiziano Labruna).
