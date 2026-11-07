@@ -16,12 +16,12 @@
 // ---------------------------------------------------------------------------
 
 window.SITE = {
-  title: "MOST2026",
+  title: "MOST 2026",
   registrationUrl: "", // e.g. "https://forms.gle/XXXXXXXX"
   registrationDeadline: "", // e.g. "20 November 2026"
   onlineUrl: "http://zil.ipipan.waw.pl/seminarium-online",
   seminarUrl: "https://zil.ipipan.waw.pl/seminar",
-  contactEmail: "", // e.g. "seminar@ipipan.waw.pl"
+  contactEmail: "", // e.g. "maciej.ogrodniczuk@ipipan.waw.pl"
 };
 
 window.EVENTS = [
@@ -34,7 +34,7 @@ window.EVENTS = [
     schedule: [
       { heading: "Registration and welcome" },
       { time: "8:30–9:00", text: "Participant registration" },
-      { time: "9:00–9:15", text: "Opening of the conference and welcome by the IPI PAN Directors" },
+      { time: "9:00–9:15", text: "Opening of the conference and welcome by the representatives of the Institute of Computer Science and the International Cooperation Department of the Polish Academy of Sciences" },
       { heading: "Session 1" },
       {
         time: "9:15–10:00",
@@ -133,7 +133,7 @@ window.EVENTS = [
     schedule: [
       { heading: "Registration and welcome" },
       { time: "8:30–9:00", text: "Participant registration" },
-      { time: "9:00–9:15", text: "Opening of the conference and welcome by the IPI PAN Directors" },
+      { time: "9:00–9:15", text: "Opening of the conference and welcome by the representatives of the Institute of Computer Science and the International Cooperation Department of the Polish Academy of Sciences" },
       { heading: "Session 1" },
       {
         time: "9:15–10:00",
