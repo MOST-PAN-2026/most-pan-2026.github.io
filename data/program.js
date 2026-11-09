@@ -86,9 +86,9 @@ window.EVENTS = [
         affiliation: "GESIS – Leibniz Institute for the Social Sciences",
         photo: "photos/mayr-schlegel.jpg",
         website: "https://philippmayr.github.io/",
-        title: "",
+        title: "Open Political Corpora: Structuring, Searching, and Analyzing Political Text Collections with PoliCorp",
         bio: "Philipp Mayr-Schlegel is team leader for Information and Data Retrieval in the Knowledge Technologies for the Social Sciences department at GESIS – Leibniz Institute for the Social Sciences. He received his PhD from Humboldt University Berlin in 2009. His research covers interactive information retrieval, scholarly recommendation systems, bibliometric methods and digital libraries. He was General Chair of the European Conference on Information Retrieval (ECIR) in 2019.",
-        abstract: "",
+        abstract: "In this work, we present PoliCorp, a web portal designed to facilitate the search and analysis of political text corpora. PoliCorp provides researchers with access to rich textual data, enabling in-depth analysis of parliamentary discourse over time. The platform currently contains a collection of transcripts of debates from the German parliament, spanning 76 years of proceedings. With the advanced search functionality, researchers can apply logical operations to combine or exclude search criteria, making it easier to filter through vast amounts of parliamentary debate data. The search can be customised by combining multiple fields and applying logical operators to uncover complex patterns and insights within the data. Additional data processing steps were performed to enable web-based search and incorporate supplementary features. A key feature that differentiates PoliCorp is its intuitive web-based interface that enables users to query processed political texts without requiring programming skills. The user-friendly platform allows the creation of custom subcorpora via search parameters, which can be freely downloaded in JSON format for further analysis.",
       },
       {
         time: "14:15–15:00",
