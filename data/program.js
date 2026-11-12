@@ -105,7 +105,7 @@ window.EVENTS = [
       {
         time: "15:30–16:15",
         speaker: "Tiziano Labruna",
-        affiliation: "Fondazione Bruno Kessler",
+        affiliation: "University of Padua",
         photo: "photos/labruna.jpg",
         website: "https://nlplab.fbk.eu/people/tiziano-labruna",
         title: "From Detecting Persuasion to Predicting Its Success: Persuasion Strategies as Predictive Signals",
