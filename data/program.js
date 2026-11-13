@@ -81,7 +81,7 @@ window.EVENTS = [
       { time: "12:45–13:30", text: "Networking lunch in the conference area", kind: "break", icon: "lunch" },
       { heading: "Session 3" },
       {
-        time: "13:30–14:15",
+        time: "13:30–13:55",
         speaker: "Philipp Mayr-Schlegel",
         affiliation: "GESIS – Leibniz Institute for the Social Sciences",
         photo: "photos/mayr-schlegel.jpg",
@@ -91,7 +91,7 @@ window.EVENTS = [
         abstract: "In this work, we present PoliCorp, a web portal designed to facilitate the search and analysis of political text corpora. PoliCorp provides researchers with access to rich textual data, enabling in-depth analysis of parliamentary discourse over time. The platform currently contains a collection of transcripts of debates from the German parliament, spanning 76 years of proceedings. With the advanced search functionality, researchers can apply logical operations to combine or exclude search criteria, making it easier to filter through vast amounts of parliamentary debate data. The search can be customised by combining multiple fields and applying logical operators to uncover complex patterns and insights within the data. Additional data processing steps were performed to enable web-based search and incorporate supplementary features. A key feature that differentiates PoliCorp is its intuitive web-based interface that enables users to query processed political texts without requiring programming skills. The user-friendly platform allows the creation of custom subcorpora via search parameters, which can be freely downloaded in JSON format for further analysis.",
       },
       {
-        time: "14:15–15:00",
+        time: "13:55–14:40",
         speaker: "Kamil Orzechowski",
         affiliation: "Warsaw University of Technology",
         photo: "photos/orzechowski.jpg",
@@ -100,10 +100,10 @@ window.EVENTS = [
         bio: "Kamil P. Orzechowski is a researcher at the Faculty of Physics, Warsaw University of Technology, where he pursued doctoral research in the university's Doctoral School. His work develops collective artificial intelligence methods and applies them to the statistical physics of complex networks. He is first author of a 2025 Scientific Reports paper showing that machine learning ensembles, like human crowds, can under some conditions lose accuracy as they grow.",
         abstract: "Parliamentary corpora offer rich speech texts and speaker metadata but rarely capture interpersonal sentiment between legislators. Research on legislative relationships relies mainly on roll-call votes and co-sponsorship, reflecting behavioural alignment rather than expressed attitudes such as approval, criticism, or hostility. We introduce ParlSent-EU, a cross-national dataset of directed interpersonal sentiment relations from plenary speeches in the Polish Sejm, German Bundestag, and French Assemblée nationale, spanning over three decades from the 1990s. It was developed by Warsaw University of Technology (OMINO project) and GESIS – Leibniz Institute for the Social Sciences (POLLUX project). Each relation records a speaker, a targeted legislator, and the expressed sentiment (positive, neutral, or negative), with temporal, parliamentary, and demographic metadata, enabling the reconstruction of directed, signed, and temporal networks. Relations are identified by a pipeline combining lexical filtering, LLM-based sentiment extraction, and rule-based entity disambiguation, validated against manually annotated gold standards with performance metrics and inter-annotator agreement. ParlSent-EU enables comparative, longitudinal studies of elite affective polarization, cross-party hostility, intra-party cohesion, and gendered political communication in European parliamentary democracies.",
       },
-      { time: "15:00–15:30", text: "Networking coffee break", kind: "break", icon: "coffee" },
+      { time: "14:40–15:15", text: "Networking coffee break", kind: "break", icon: "coffee" },
       { heading: "Session 4" },
       {
-        time: "15:30–16:15",
+        time: "15:15–16:00",
         speaker: "Tiziano Labruna",
         affiliation: "University of Padua",
         photo: "photos/labruna.jpg",
@@ -113,7 +113,7 @@ window.EVENTS = [
         abstract: "Computational work on persuasion has largely focused on detecting rhetorical techniques in text. This talk would ask a complementary question: do those techniques tell us anything about whether an argument actually changes someone's mind? Multi-Strategy Persuasion Scoring (https://aclanthology.org/2026.findings-eacl.97/) is a zero-shot framework in which a large language model reasons about each of six persuasion strategies independently and produces a per-strategy score, which can then be aggregated directly or used as input to a lightweight classifier. The strategy has been tested across three datasets, proving that strategy-guided reasoning consistently outperforms both direct pairwise comparison and generic chain-of-thought baselines.",
       },
       {
-        time: "16:15–17:00",
+        time: "16:00–16:45",
         speaker: "Giovanni Da San Martino",
         affiliation: "University of Padua",
         photo: "photos/da-san-martino.jpg",
