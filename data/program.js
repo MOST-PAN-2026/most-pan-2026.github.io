@@ -17,11 +17,11 @@
 
 window.SITE = {
   title: "MOST 2026",
-  registrationUrl: "", // e.g. "https://forms.gle/XXXXXXXX"
-  registrationDeadline: "", // e.g. "20 November 2026"
-  onlineUrl: "http://zil.ipipan.waw.pl/seminarium-online",
-  seminarUrl: "https://zil.ipipan.waw.pl/seminar",
-  contactEmail: "", // e.g. "maciej.ogrodniczuk@ipipan.waw.pl"
+  registrationUrl: "https://forms.gle/VWV9iKbSBLgi6N4Q7",
+  registrationDeadline: "", // e.g. "22 November 2026"
+  onlineUrl: "http://zil.ipipan.waw.pl/most",
+  seminarUrl: "https://most-pan-2026.github.io/",
+  contactEmail: "maciej.ogrodniczuk@ipipan.waw.pl"
 };
 
 window.EVENTS = [
