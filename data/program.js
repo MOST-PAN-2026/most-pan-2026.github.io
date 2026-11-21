@@ -62,7 +62,7 @@ window.EVENTS = [
         time: "11:15–12:00",
         speaker: "Jakub Piskorski",
         affiliation: "Joint Research Centre of the European Commission",
-        photo: "photos/piskorski.jpg",
+        photo: "photos/piskorski.png",
         website: "http://www.piskorski.waw.pl/",
         title: "Multilingual Corpora of Persuasion Techniques in News and Parliamentary Debates",
         bio: "Jakub Piskorski works on information extraction and media analysis, including disinformation and propaganda detection, persuasion techniques, framing and narrative extraction. He has worked at the Joint Research Centre of the European Commission in Ispra, Frontex and the German Research Center for Artificial Intelligence (DFKI), and is affiliated with the Institute of Computer Science, Polish Academy of Sciences. He co-organised SemEval 2025 Task 10 on narratives in online news.",
