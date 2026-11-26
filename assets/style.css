@@ -78,6 +78,11 @@ h2 { font-size: 2rem; font-weight: 400; letter-spacing: -0.01em; margin: 64px 0 
 .talk-who strong { font-weight: 600; }
 .talk-bio { font-size: .92rem; line-height: 1.6; margin: 0 0 6px; max-width: 62ch; }
 .tba { font-style: italic; font-weight: 400; }
+.talk-slides { font-family: var(--mono); font-size: .8rem; margin: 0 0 6px; }
+.talk-slides a::before { content: "↓ "; }
+.c1 .talk-slides a { color: var(--c1); }
+.c2 .talk-slides a { color: var(--c2); }
+.talk-slides a:hover { color: var(--c3); }
 
 details { margin-top: 4px; }
 details summary { cursor: pointer; font-family: var(--mono); font-size: .8rem; color: var(--c1); list-style: none; }
