@@ -42,7 +42,7 @@ window.EVENTS = [
         affiliation: "Jožef Stefan Institute",
         photo: "photos/erjavec.jpg",
         website: "https://nl.ijs.si/et/",
-        title: "ParlaMint – Comparable and Interoperable Parliamentary Corpora",
+        title: "[ParlaMint – Comparable and Interoperable Parliamentary Corpora](https://nl.ijs.si/et/)",
         bio: "Tomaž Erjavec is a Scientific and Professional Counselor in the Department of Knowledge Technologies at the Jožef Stefan Institute in Ljubljana, Slovenia. His main research interests center around corpus compilation, text encoding standards, digital humanities and language technologies, primarily for Slovenian. He coordinated the Slovenian CLARIN.SI research infrastructure until October 20026, and received the 2021 Steven Krauwer Award for CLARIN Achievements, partly for his work on ParlaMint parliamentary corpora.",
         abstract: "The talk presents the ParlaMint corpora of parliamentary debates (https://www.clarin.eu/parlamint) of 29 European countries and autonomous regions, covering at least the period from 2015 to 2022, and containing over 1 billion words. The corpora are uniformly encoded, contain rich metadata about their 24 thousand speakers, and are linguistically annotated, as well as machine translated to English. We present the compilation of the corpora, including the encoding infrastructure, use of GitHub, the production of individual corpora, the common pipeline for producing their distribution, and use of CLARIN services for dissemination. We also present associated efforts, such corpora of additional countries, and the ParlaSpeech (https://clarinsi.github.io/parlaspeech/) corpora. Finally, the use of the corpora and further work are discussed.",
       },
