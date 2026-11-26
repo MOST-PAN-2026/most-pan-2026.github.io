@@ -72,6 +72,7 @@
       <div>
         ${t.time ? `<p class="talk-time">${esc(t.time)}</p>` : ""}
         <h4 class="talk-title">${t.title ? esc(t.title) : '<span class="tba">Title to be announced</span>'}</h4>
+        ${t.slides ? `<p class="talk-slides"><a href="${esc(t.slides)}" target="_blank" rel="noopener">slides${NEW_TAB}</a></p>` : ""}
         <p class="talk-who"><strong>${nameLink(t)}</strong>${t.affiliation ? `, ${esc(t.affiliation)}` : ""}</p>
         ${t.bio ? `<p class="talk-bio">${esc(t.bio)}</p>` : ""}
         ${t.abstract ? `<details><summary>abstract</summary><div class="note">${richText(t.abstract)}</div></details>` : ""}
