@@ -20,7 +20,7 @@ window.SITE = {
   registrationUrl: "https://forms.gle/VWV9iKbSBLgi6N4Q7",
   registrationDeadline: "", // e.g. "22 November 2026"
   onlineUrl: "http://zil.ipipan.waw.pl/most",
-  seminarUrl: "https://zil.ipipan.waw.pl/seminar",
+  seminarUrl: "https://language.ipipan.waw.pl/seminars/nlp/",
   contactEmail: "maciej.ogrodniczuk@ipipan.waw.pl"
 };
 
